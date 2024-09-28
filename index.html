@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Chat with any PDF</h1>
+        <p class="low-opacity">Join millions of students, researchers and professionals to instantly answer questions and understand research with AI</p>
+    </header>
+    
+    <!-- File drop area -->
+    <div id="drop-zone" class="drop-zone">
+        <p>Drag & drop your PDF here, or <label for="file">browse</label> to upload</p>
+        <input type="file" name="pdf" id="file" accept=".pdf" style="display:none">
+    </div>
+
+    <h2>Going Viral all over the World</h2>
+    <p class="low-opacity">Across borders, beyond languages: AI is revolutionizing the understanding of research worldwide</p>
+    <h2>ChatPDF in a Nutshell</h2>
+    <p class="low-opacity">Your PDF AI - like ChatGPT but for PDFs. Summarize and answer questions for free.</p>
+    
+    <div class="section">
+        <div class="grid-item">
+            <h3><i class="fas fa-user-graduate"></i> For students</h3>
+            <p>Study for exams, get help with homework, and answer multiple choice questions effortlessly.</p>
+        </div>
+        <div class="grid-item">
+            <h3><i class="fas fa-book-open"></i> For Research</h3>
+            <p>Dive into scientific papers, academic articles, and books to get the information you need for your research.</p>
+        </div>
+        <div class="grid-item">
+            <h3><i class="fas fa-briefcase"></i> For Professionals</h3>
+            <p>Navigate legal contracts, financial reports, manuals, and training material. Ask questions to any PDF for fast insights.</p>
+        </div>
+        <div class="grid-item">
+            <h3><i class="fas fa-folder-open"></i> Multi-File Chats</h3>
+            <p>Create folders to organize your files and chat with multiple PDFs in one single conversation.</p>
+        </div>
+        <div class="grid-item">
+            <h3><i class="fas fa-quote-right"></i> Cited Sources</h3>
+            <p>Answers contain references to their source in the original PDF document. No more flipping pages.</p>
+        </div>
+        <div class="grid-item">
+            <h3><i class="fas fa-globe"></i> Any Language</h3>
+            <p>Works worldwide! ChatPDF accepts PDFs in any language and can chat in any language.</p>
+        </div>
+    </div>
+
+    <script>
+        // Get drop zone and file input elements
+        const dropZone = document.getElementById('drop-zone');
+        const fileInput = document.getElementById('file');
+
+        // Prevent default behavior for drag events
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('dragover');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('dragover');
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+
+            // If a file is dropped, trigger the upload process
+            if (files.length) {
+                fileInput.files = files;
+                handleFileUpload(files[0]);
+            }
+        });
+
+        // Handle click on the "browse" link
+        dropZone.querySelector('label').addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        // Handle file input change (manual upload)
+        fileInput.addEventListener('change', () => {
+            const files = fileInput.files;
+            if (files.length) {
+                handleFileUpload(files[0]);
+            }
+        });
+
+        // Function to handle file upload
+        function handleFileUpload(file) {
+            console.log('Uploading file:', file.name);
+            // Add your file upload logic here, e.g., send file to the server
+            // You can use FormData and AJAX to send it to a backend server
+        }
+    </script>
+
+</body>
+</html>
