@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Corporate PDF Chat</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -13,11 +13,8 @@
         <p class="low-opacity">Join millions of students, researchers and professionals to instantly answer questions and understand research with AI</p>
     </header>
     
-    <!-- File drop area -->
-    <div id="drop-zone" class="drop-zone">
-        <p>Drag & drop your PDF here, or <label for="file">browse</label> to upload</p>
-        <input type="file" name="pdf" id="file" accept=".pdf" style="display:none">
-    </div>
+    <div class="take-input"><input type="file" name="pdf" id="pdf"></div>
+    
 
     <h2>Going Viral all over the World</h2>
     <p class="low-opacity">Across borders, beyond languages: AI is revolutionizing the understanding of research worldwide</p>
@@ -50,54 +47,6 @@
             <p>Works worldwide! ChatPDF accepts PDFs in any language and can chat in any language.</p>
         </div>
     </div>
-
-    <script>
-        // Get drop zone and file input elements
-        const dropZone = document.getElementById('drop-zone');
-        const fileInput = document.getElementById('file');
-
-        // Prevent default behavior for drag events
-        dropZone.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            dropZone.classList.add('dragover');
-        });
-
-        dropZone.addEventListener('dragleave', () => {
-            dropZone.classList.remove('dragover');
-        });
-
-        dropZone.addEventListener('drop', (e) => {
-            e.preventDefault();
-            dropZone.classList.remove('dragover');
-            const files = e.dataTransfer.files;
-
-            // If a file is dropped, trigger the upload process
-            if (files.length) {
-                fileInput.files = files;
-                handleFileUpload(files[0]);
-            }
-        });
-
-        // Handle click on the "browse" link
-        dropZone.querySelector('label').addEventListener('click', () => {
-            fileInput.click();
-        });
-
-        // Handle file input change (manual upload)
-        fileInput.addEventListener('change', () => {
-            const files = fileInput.files;
-            if (files.length) {
-                handleFileUpload(files[0]);
-            }
-        });
-
-        // Function to handle file upload
-        function handleFileUpload(file) {
-            console.log('Uploading file:', file.name);
-            // Add your file upload logic here, e.g., send file to the server
-            // You can use FormData and AJAX to send it to a backend server
-        }
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>

@@ -52,26 +52,14 @@ p {
     font-size: 1rem;
 }
 
-
-/* Basic styles for drop zone */
-.drop-zone {
-    width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 40px;
-    border: 2px dashed #007bff;
-    border-radius: 10px;
-    text-align: center;
-    color: #007bff;
-    transition: background-color 0.3s ease;
+.take-input {
+    margin: 10px;
 }
 
-.drop-zone.dragover {
-    background-color: rgba(0, 123, 255, 0.1);
+.grid-item {
+    transition: all 0.3s ease;
 }
 
-.drop-zone label {
-    color: #007bff;
-    cursor: pointer;
-    text-decoration: underline;
+.grid-item:hover {
+    transform: translateY(-10px);
 }
