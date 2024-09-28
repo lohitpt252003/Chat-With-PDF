@@ -9,44 +9,60 @@
 </head>
 <body>
     <header>
-        <h1>Chat with any PDF</h1>
-        <p class="low-opacity">Join millions of students, researchers and professionals to instantly answer questions and understand research with AI</p>
+        <nav>
+            <h1>Corporate PDF Chat</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#upload" class="upload-btn">Upload PDF</a></li>
+            </ul>
+        </nav>
     </header>
     
-    <div class="take-input"><input type="file" name="pdf" id="pdf"></div>
-    
+    <section id="upload" class="upload-section">
+        <h2>Upload Your PDF</h2>
+        <p class="low-opacity">Upload and analyze your PDF with AI-driven insights.</p>
+        
+        <div class="file-upload">
+            <label for="pdf-upload" class="file-upload-label">
+                <i class="fas fa-file-upload"></i> Choose a file to upload
+            </label>
+            <input type="file" id="pdf-upload" class="file-upload-input" />
+            <div class="upload-status">
+                <progress id="uploadProgress" value="0" max="100"></progress>
+                <span id="uploadPercentage">0%</span>
+            </div>
+            <button id="reupload-btn" class="reupload-btn hidden">Re-upload</button>
+        </div>
+    </section>
 
-    <h2>Going Viral all over the World</h2>
-    <p class="low-opacity">Across borders, beyond languages: AI is revolutionizing the understanding of research worldwide</p>
-    <h2>ChatPDF in a Nutshell</h2>
-    <p class="low-opacity">Your PDF AI - like ChatGPT but for PDFs. Summarize and answer questions for free.</p>
-    
-    <div class="section">
-        <div class="grid-item">
-            <h3><i class="fas fa-user-graduate"></i> For students</h3>
-            <p>Study for exams, get help with homework, and answer multiple choice questions effortlessly.</p>
+    <section id="features">
+        <h2>Why Use Corporate PDF Chat?</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3><i class="fas fa-user-graduate"></i> For Researchers</h3>
+                <p>Quickly scan research papers and academic articles for critical insights.</p>
+            </div>
+            <div class="feature-item">
+                <h3><i class="fas fa-briefcase"></i> For Professionals</h3>
+                <p>Analyze legal contracts, financial reports, and manuals effortlessly.</p>
+            </div>
+            <div class="feature-item">
+                <h3><i class="fas fa-folder-open"></i> Multi-File Chats</h3>
+                <p>Organize and chat with multiple PDFs in a single conversation.</p>
+            </div>
+            <div class="feature-item">
+                <h3><i class="fas fa-quote-right"></i> Cited Sources</h3>
+                <p>Each answer is backed by citations from your original PDF document.</p>
+            </div>
         </div>
-        <div class="grid-item">
-            <h3><i class="fas fa-book-open"></i> For Research</h3>
-            <p>Dive into scientific papers, academic articles, and books to get the information you need for your research.</p>
-        </div>
-        <div class="grid-item">
-            <h3><i class="fas fa-briefcase"></i> For Professionals</h3>
-            <p>Navigate legal contracts, financial reports, manuals, and training material. Ask questions to any PDF for fast insights.</p>
-        </div>
-        <div class="grid-item">
-            <h3><i class="fas fa-folder-open"></i> Multi-File Chats</h3>
-            <p>Create folders to organize your files and chat with multiple PDFs in one single conversation.</p>
-        </div>
-        <div class="grid-item">
-            <h3><i class="fas fa-quote-right"></i> Cited Sources</h3>
-            <p>Answers contain references to their source in the original PDF document. No more flipping pages.</p>
-        </div>
-        <div class="grid-item">
-            <h3><i class="fas fa-globe"></i> Any Language</h3>
-            <p>Works worldwide! ChatPDF accepts PDFs in any language and can chat in any language.</p>
-        </div>
-    </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Corporate PDF Chat. All rights reserved.</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
